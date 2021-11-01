@@ -10,6 +10,16 @@
 		map.onmousemove = showCoords;
 		var mydiv = document.getElementById("mydiv");
 		mydiv.onclick = addtext;
+        const taskWrapperDiv = document.querySelector("#taskWrapperDiv");
+        const newUl = document.createElement("ul");
+
+        for(let i=1; i < 4; i++){
+            const li = document.createElement("li");
+            li.innerHTML = "This is the " + i + ". li";
+            newUl.appendChild(li);
+        }
+
+        taskWrapperDiv.appendChild(newUl);
 	}
 	
 	function showCoords(eventObj) {
@@ -34,5 +44,8 @@
 	<img id="map" src="data/map.jpg">
 	<p id="coords">Move mouse over map to find coordinates...</p>
 	<div id="mydiv" style="border:1px solid red">I am a DIV! Click me.</div>
+    <div id="taskWrapperDiv">
+
+    </div>
 </body>
 </html>

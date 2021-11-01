@@ -7,15 +7,26 @@
 	span {
 		cursor: pointer;
 	}
+    #someTextDiv{
+      margin: 10px;
+      background-color: grey;
+    }
   </style>
   <script>
 window.onload = function() {
-	var div = document.getElementById("clickme");
+	const div = document.getElementById("clickme");
 	if (div.addEventListener) {
 		div.addEventListener("click", handleClick, false);
 	} else if (div.attachEvent) {
 		div.attachEvent("click", handleClick);
 	}
+
+    const someTextDiv = document.querySelector("#someTextDiv");
+
+    someTextDiv.addEventListener("mouseover", (evt)=>{
+      const elemId = evt.target.id;
+      window.alert("Div with " + elemId + " id was hovered");
+    });
 };
 
 function handleClick(e) {
@@ -33,5 +44,8 @@ function handleClick(e) {
 </head>
 <body>
 <span id="clickme">Click me!</span>
+<div id="someTextDiv">
+  Some text
+</div>
 </body>
 </html>
