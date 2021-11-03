@@ -11,9 +11,6 @@ String.prototype.palindrome = function() {
 		if (this.charAt(i) !== this.charAt(len-i)) {
 			return false;
 		}
-		if (i === (len-i)) {
-			return true;
-		}
 	}
 	return true;
 };
